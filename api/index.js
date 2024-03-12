@@ -1,20 +1,12 @@
 import express from "express";
-import mongoose from "mongoose";
+// import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRouter from "./routes/userRoute.js";
 import authRouter from "./routes/authRoute.js";
-import bodyParser from "body-parser";
+// import bodyParser from "body-parser";
+import { connectDB } from "./db/connectDB.js";
 
 dotenv.config();
-
-mongoose
-  .connect(process.env.MONGO)
-  .then(() => {
-    console.log("connected to db");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
 
 const app = express();
 
@@ -32,6 +24,10 @@ app.use((err, req, res, next) => {
   });
 });
 
+const MONGO_URL = process.env.MONGO_URI + process.env.MONGO_NAME
+
+connectDB(MONGO_URL)
 app.listen(3000, () => {
   console.log(`Server is running on port 3000!`);
 });
+
