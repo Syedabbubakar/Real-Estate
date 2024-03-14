@@ -5,12 +5,16 @@ import userRouter from "./routes/userRoute.js";
 import authRouter from "./routes/authRoute.js";
 // import bodyParser from "body-parser";
 import { connectDB } from "./db/connectDB.js";
+import cookieParser from "cookie-parser";
 
 dotenv.config();
 
 const app = express();
 
 app.use(express.json());
+
+app.use(cookieParser());
+
 app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
 

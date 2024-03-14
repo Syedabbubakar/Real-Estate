@@ -78,7 +78,7 @@ const Profile = () => {
           ) : filePerc > 0 && filePerc < 100 ? (
             <span className="text-green-700">{`Uploading ${filePerc}%`}</span>
           ) : filePerc === 100 ? (
-            <span className="text-green-700">Image successfully uploaded</span>
+            <span className="text-green-700">Image successfully uploaded!</span>
           ) : (
             ""
           )}
