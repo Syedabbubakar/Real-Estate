@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { signInSuccess } from "../redux/user/userSlice";
 import { useNavigate } from "react-router-dom";
 
-const OAuth = () => {
+const OAuth = ({btnName}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleGoogleClick = async () => {
@@ -46,7 +46,7 @@ const OAuth = () => {
         loading="lazy"
         alt="google logo"
       />
-      <span>Sign In with Google</span>
+      <span>{btnName}</span>
     </button>
   );
 };

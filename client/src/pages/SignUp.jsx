@@ -73,12 +73,12 @@ const SignUp = () => {
         >
           {loading ? "loading.." : "Sign Up"}
         </button>
-        <OAuth/>
+        <OAuth btnName={'Sign Up with Google'}/>
       </form>
       <div className="flex gap-2 mt-5">
         <p>Have an account</p>
         <Link to={"/sign-in"}>
-          <span className="text-blue-700">Sign in</span>
+          <span className="text-blue-700">Sign In</span>
         </Link>
       </div>
       {error && <p className="text-red-500">{error}</p>}

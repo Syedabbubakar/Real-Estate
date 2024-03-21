@@ -67,7 +67,7 @@ const SignIn = () => {
         >
           {loading ? "loading.." : "Sign In"}
         </button>
-        <OAuth/>
+        <OAuth btnName={'Sign In with Google'}/>
       </form>
       <div className="flex gap-2 mt-5">
         <p>Dont Have an account</p>
